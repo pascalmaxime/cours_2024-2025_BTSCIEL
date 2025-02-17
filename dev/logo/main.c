@@ -16,6 +16,12 @@ void afficher_position(Position pos)
 {
     printf("x=%d y=%d\n", pos.x, pos.y) ;
 }
+void initialiser_grille()
+{
+    for (int y = 0; y < HAUTEUR; y++){
+
+    }
+}
 
 int main ()
 {
