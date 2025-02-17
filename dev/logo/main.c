@@ -3,7 +3,7 @@
 
 int main ()
 {
-    printf("hello logo")
-    return EXIT_SUCCESS
+    printf("hello logo");
+    return EXIT_SUCCESS;
 
 }
