@@ -14,7 +14,7 @@ char grille[HAUTEUR][LARGEUR];
 
 void initialiser_grille(); //déclation
 void afficher_position(Position pos);
-
+void positionner(Position pos, char marqueur);
 
 
 int main ()
