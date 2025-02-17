@@ -18,8 +18,12 @@ void afficher_position(Position pos)
 }
 void initialiser_grille()
 {
-    for (int y = 0; y < HAUTEUR; y++){
-
+    for (int y = 0; y < HAUTEUR; y++)
+    {
+        for (int x = 0; x < LARGEUR; x++)
+        {
+            grille[y][x] = '';
+        }
     }
 }
 
