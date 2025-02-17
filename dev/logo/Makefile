@@ -1,2 +1,2 @@
 logo:
-	gcc -o partie1 partie1.c 
+	gcc -o main main.c 
