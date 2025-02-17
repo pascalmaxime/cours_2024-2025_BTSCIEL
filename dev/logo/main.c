@@ -21,7 +21,9 @@ int main ()
 {
     Position joueur = {0, 0};
     Position cible;
-
+    positionner(cible, 'C');
+    
+    positionner (joueur, 'J');
     initialiser_grille(); // appel 
 
     printf("hello logo\n");
@@ -49,4 +51,8 @@ void initialiser_grille()
             grille[y][x] = ' ';
         }
     }
+}
+void positionner(Position pos, char marqueur)
+{
+    grille[pos.y][pos.x] = marqueur;
 }
