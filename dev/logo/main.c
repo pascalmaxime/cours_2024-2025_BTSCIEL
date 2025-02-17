@@ -1,36 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Grille de 20 * 20
-#define LARGEUR 20
-#define HAUTEUR 20
-
 typedef struct position_t {
     int x;
     int y;
 } Position;
 
-int grille[HAUTEUR][LARGEUR];
+// Grille de 20 * 20
+#define LARGEUR 20
+#define HAUTEUR 20
 
-void afficher_position(Position pos)
-{
-    printf("x=%d y=%d\n", pos.x, pos.y) ;
-}
-void initialiser_grille()
-{
-    for (int y = 0; y < HAUTEUR; y++)
-    {
-        for (int x = 0; x < LARGEUR; x++)
-        {
-            grille[y][x] = '';
-        }
-    }
-}
+char grille[HAUTEUR][LARGEUR]; 
+
+void initialiser_grille(); //déclation
+void afficher_position(Position pos);
+
+
 
 int main ()
 {
     Position joueur = {0, 0};
     Position cible;
+
+    initialiser_grille(); // appel 
 
     printf("hello logo\n");
     cible.x = 5;
@@ -42,4 +34,19 @@ int main ()
     afficher_position(cible);
     return EXIT_SUCCESS;
 
+}
+// définition
+void afficher_position(Position pos)
+{
+    printf("x=%d y=%d\n", pos.x, pos.y) ;
+}
+void initialiser_grille()
+{
+    for (int y = 0; y < HAUTEUR; y++)
+    {
+        for (int x = 0; x < LARGEUR; x++)
+        {
+            grille[y][x] = ' ';
+        }
+    }
 }
