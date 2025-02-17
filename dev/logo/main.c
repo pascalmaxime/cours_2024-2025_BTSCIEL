@@ -12,47 +12,67 @@ typedef struct position_t {
 
 char grille[HAUTEUR][LARGEUR]; 
 
-void initialiser_grille(); //déclation
+void initialiser_grille(); 
 void afficher_position(Position pos);
 void positionner(Position pos, char marqueur);
-
+void afficher_grille(); // Ajout d'une fonction d'affichage
 
 int main ()
 {
     Position joueur = {0, 0};
-    Position cible;
-    positionner(cible, 'C');
+    Position cible = {5, 5}; // Initialisation correcte
+
+    initialiser_grille(); // D'abord, on initialise la grille
     
-    positionner (joueur, 'J');
-    initialiser_grille(); // appel 
+    positionner(joueur, 'J');
+    positionner(cible, 'C');
 
-    printf("hello logo\n");
-    cible.x = 5;
-    cible.y = 5;
-
-    printf("Joueur");
+    printf("Hello logo\n");
+    
+    printf("Joueur ");
     afficher_position(joueur);
-    printf("Cible:");
+    
+    printf("Cible ");
     afficher_position(cible);
+    
+    afficher_grille(); // Affichage de la grille complète
+    
     return EXIT_SUCCESS;
-
 }
-// définition
+
 void afficher_position(Position pos)
 {
-    printf("x=%d y=%d\n", pos.x, pos.y) ;
+    printf("x=%d y=%d\n", pos.x, pos.y);
 }
+
 void initialiser_grille()
 {
     for (int y = 0; y < HAUTEUR; y++)
     {
         for (int x = 0; x < LARGEUR; x++)
         {
-            grille[y][x] = ' ';
+            grille[y][x] = '.';
         }
     }
 }
+
 void positionner(Position pos, char marqueur)
 {
-    grille[pos.y][pos.x] = marqueur;
+    if (pos.x >= 0 && pos.x < LARGEUR && pos.y >= 0 && pos.y < HAUTEUR) 
+    {
+        grille[pos.y][pos.x] = marqueur;
+    }
+}
+
+void afficher_grille()
+{
+    printf("\n");
+    for (int y = 0; y < HAUTEUR; y++)
+    {
+        for (int x = 0; x < LARGEUR; x++)
+        {
+            printf("%c ", grille[y][x]);
+        }
+        printf("\n");
+    }
 }
