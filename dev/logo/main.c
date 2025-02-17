@@ -12,6 +12,11 @@ typedef struct position_t {
 
 int grille[HAUTEUR][LARGEUR];
 
+void afficher_position(Position pos)
+{
+    printf("x=%d y=%d\n", pos.x, pos.y) ;
+}
+
 int main ()
 {
     Position joueur = {0, 0};
@@ -21,8 +26,10 @@ int main ()
     cible.x = 5;
     cible.y = 5;
 
-    printf("Joueur: x=%d y=%d", joueur.x, joueur.y);
-    printf("Cible: x=%d y=%d", cible.x, cible.y);
+    printf("Joueur");
+    afficher_position(joueur);
+    printf("Cible:");
+    afficher_position(cible);
     return EXIT_SUCCESS;
 
 }
