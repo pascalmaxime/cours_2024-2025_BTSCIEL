@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 int main() {
-    *
     double nombre1;
     double nombre2;
     double resultat;
